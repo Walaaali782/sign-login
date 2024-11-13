@@ -1,0 +1,7 @@
+com\example\demo\PerfumApplication.class
+com\example\demo\Configuration\AppConfig.class
+com\example\demo\Configuration\SecurityConfig.class
+com\example\demo\Repository\UserRepository.class
+com\example\demo\Entity\User.class
+com\example\demo\Server\UserService.class
+com\example\demo\Controller\AuthController.class
