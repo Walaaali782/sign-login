@@ -18,7 +18,7 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/signup")
+    @PostMapping("/api/signup")
     public ResponseEntity<?> signup(@Validated @RequestBody User user) {
         if (user.getEmail() == null || user.getEmail().isEmpty()) {
             return ResponseEntity.badRequest().body("Email is required");
@@ -35,7 +35,7 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/login")
+    @PostMapping("/api/login")
     public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
         if (email == null || email.isEmpty()) {
             return ResponseEntity.badRequest().body("Email is required");
