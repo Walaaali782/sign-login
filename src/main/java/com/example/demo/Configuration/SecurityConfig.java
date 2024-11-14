@@ -14,11 +14,11 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 	    http.csrf().disable()
 	        .authorizeRequests()
-	        .requestMatchers("/signup", "/login").permitAll()  // Make "/signup" and "/login" accessible to all
+	        .requestMatchers("/api/signup", "/api/login").permitAll()  // Make "/signup" and "/login" accessible to all
 	        .anyRequest().authenticated()
 	        .and()
 	        .formLogin()
-	            .loginProcessingUrl("/login") // تأكد من أن Spring Security يستخدم "/login" كمسار لمعالجة تسجيل الدخول
+	            .loginProcessingUrl( "/api/login") // تأكد من أن Spring Security يستخدم "/login" كمسار لمعالجة تسجيل الدخول
 	            .permitAll()
 	        .and()
 	        .httpBasic(); // Enable basic authentication
